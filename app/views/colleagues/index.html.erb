@@ -1,0 +1,40 @@
+<% if user_signed_in? %>
+<br><br>
+<table class="table table-striped table-hover table-bordered border-primary">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+      
+      <th>Action</th>
+      <%# <th colspan="1"></th> %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @colleagues.each do |colleague| %>
+      <tr>
+        <td><%= link_to colleague.first_name+' '+colleague.last_name, colleague %></td>
+        <td><%= colleague.email %></td>
+        <td><%= colleague.phone %></td>
+        <td><%= colleague.twitter %></td>
+        
+        <td><%= link_to 'Delete', colleague, 
+        method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm " %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Colleague', new_colleague_path, class:"btn btn-secondary" %>
+<% else %>
+<h1>Home page</h1>
+<p>
+<%= @my_index %>
+</p>
+
+<% end %>

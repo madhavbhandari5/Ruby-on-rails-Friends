@@ -1,0 +1,8 @@
+<h1>Editing Colleague</h1> <br>
+
+<%= render 'form', colleague: @colleague %>
+<br>
+<%= link_to 'Show', @colleague ,class:'btn btn-info' %> 
+<%= link_to 'Delete', @colleague, 
+        method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+<%= link_to 'Back', colleagues_path, class:'btn btn-dark' %>

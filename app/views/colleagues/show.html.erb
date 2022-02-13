@@ -1,0 +1,18 @@
+
+
+<br>
+
+   
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold"><%= @colleague.first_name %> <%= @colleague.last_name %></h1>
+        <p class="col-md-8 fs-4">Email: <%= @colleague.email %><br>Phone: <%= @colleague.phone %> <br> Twitter: <%= @colleague.twitter %></p>
+        <hr>
+       <%= link_to 'Edit', edit_colleague_path(@colleague), class:"btn btn-secondary" %> 
+       <%= link_to 'Delete', @colleague, 
+        method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+      <%= link_to 'Back', colleagues_path, class:"btn btn-dark" %>
+      </div>
+    </div>
+
+
